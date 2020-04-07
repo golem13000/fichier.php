@@ -14,7 +14,7 @@ fseek($file,0);
 fwrite($file, $pages);
 fclose($file);
 
-echo '<p>Cette page a été vue ' . $pages . ' fois !</p>';
+echo '<p> Cette page a été vue ' . $pages . ' fois !</p>';
 
 ?>
 
