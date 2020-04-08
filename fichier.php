@@ -1,35 +1,60 @@
 <?php
 
-//$file = fopen("monfichier.txt","r");
-
-//var_dump(fgets($file));
-
-//fclose($file);
-
-//$file=fopen("compteur.txt", "c+");
-
-//$pages = fgets($file);
-//$pages++;
-//fseek($file,0);
-//fwrite($file, $pages);
-//fclose($file);
-
-//echo '<p> Cette page a été vue ' . $pages . ' fois !</p>';
-
-$liste = array(array("Rose", "12","2","100"),
-array("Golum","15","1","100"),
-array("ROCKY","6","1","100","Guerrier","0"));
-
-
-$file = fopen("index.csv", "c+");
-
-foreach($liste as $tab) {
-fputcsv($file, $tab);
-};
-
-fclose($file);
+var_dump($_POST);
 
 ?>
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <title>formulaire d'ajout</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="fichier.php" method="post">
+           
+            <p>
+               <label for="titre">Mon titre</label>
+               <input type="text" id="titre" name="titre">
+            </p>
+            <p>
+               <label for="description">description</label>
+               <input type="text" id="description" name="description">
+            </p>
+
+            <div>
+             <label> Nom du Perso </label>
+             <input type='text' id='nom' name='nom'>
+             </div>
+             <div>
+             <label> Santé </label>
+             <input type='number' id='sante' name='sante'>
+             </div>
+             <div>
+             <label> Force </label>
+             <input type='number' id='force' name='force'>
+             </div>
+             <div>
+             <label> Niveau </label>
+             <input type='number' id='niveau' name='niveau'>
+             </div>
+
+            <input type="submit" value="Ajouter">
+
+        
+        
+        
+        </form>
+
+    
+    
+    </body>
+    </html>
+
 
 
 
