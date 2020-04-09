@@ -1,12 +1,21 @@
 <?php
 
-var_dump($_POST);
+//var_dump($_POST);
 
-$file = fopen("recup.csv", "a+");
+$file = fopen("recup.csv", "r");
 
-fputcsv($file, $_POST);
+$recup = [];
+$tab_line = "";
+while($tab_line !== false) {
+    $tab_line = fgetcsv($file);
+    if ($tab_line !== false) {
+        array_push($recup, $tab_line);
+    }
+}
 
 fclose($file);
+
+var_dump($recup);
 
 ?>
 
