@@ -2,6 +2,12 @@
 
 var_dump($_POST);
 
+$file = fopen("recup.csv", "a+");
+
+fputcsv($file, $_POST);
+
+fclose($file);
+
 ?>
 
 
@@ -54,6 +60,7 @@ var_dump($_POST);
     
     </body>
     </html>
+    
 
 
 
