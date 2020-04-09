@@ -15,7 +15,18 @@ while($tab_line !== false) {
 
 fclose($file);
 
-var_dump($recup);
+//var_dump($recup);
+
+$json = [];
+$html = "<p>liste des perso : </p><ul>";
+foreach($recup as $recuperer) {
+    $html .= "<li>".$recuperer[0]."</li>";
+}
+$html .= "</ul>";
+
+$json = fopen("recup.json" , "w");
+fwrite($json, json_encode($recup));
+fclose($json);
 
 ?>
 
